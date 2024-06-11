@@ -1,0 +1,776 @@
+<!DOCTYPE html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/e1df7f0732.js" crossorigin="anonymous"></script>
+
+    <title>
+        My portfolio website
+    </title>
+    <style>
+        #collapseNav {
+            flex-grow: 0;
+        }
+
+        .card {
+            box-shadow: 0 0 10px 0 rgba(56, 53, 53, 0.26);
+        }
+
+        .blogsmy-5 {
+            text-align: end;
+        }
+
+        .example ::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        body {
+            /* background-image: url("");*/
+            background-color: rgb(255, 255, 255);
+            /* The image used */
+            /*background-color: #cccccc;*/
+            /* Used if the image is unavailable */
+            height: max-content;
+            width: 100%;
+            /* You must set a specified height */
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Do not repeat the image */
+            background-size: cover;
+            /* Resize the background image to cover the entire container */
+
+        }
+
+        #menu {
+            background-image: url("background-image_1.png");
+            background-size: cover;
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            z-index: -1;
+            padding-bottom: 12px;
+            padding-top: 7px;
+
+        }
+
+        #resume:hover {
+            background-color: #A890FE;
+            color: black;
+        }
+
+        #resume {
+            margin-left: auto;
+            background-color: transparent;
+            border-color: #A890FE;
+            border-radius: 10px;
+            border-width: 3px;
+            color: white
+        }
+
+        #contact-btn {
+            margin-left: auto;
+            outline: #A890FE;
+            color: black;
+            background-color: #A890FE;
+            border-radius: 10px;
+        }
+
+        #contact-btn:hover {
+            background-color: aliceblue;
+            color: black;
+
+        }
+
+
+        a:link {
+            text-decoration: none;
+
+        }
+
+
+        #card1:hover {
+            transform: translateY(-20px);
+            transition: all 0.35s ease-in-out;
+
+            border: none;
+
+
+
+        }
+
+        #card2:hover {
+            transform: translateY(-20px);
+            transition: all 0.35s ease-in;
+            transition: all 0.35s ease-out;
+            border: none;
+
+        }
+
+        #card3:hover {
+            transform: translateY(-20px);
+            transition: all 0.35s ease-in;
+            transition: all 0.35s ease-out;
+
+            border: none;
+
+        }
+
+        #edu1 {
+            background-color: rgb(3, 36, 70);
+            color: whitesmoke;
+            border-radius: 15px;
+
+        }
+
+        /* #edu1:hover {
+            background-color:;
+            color: black;
+            transition: ease;
+
+
+
+        }*/
+
+        #edu2 {
+            background-color: rgb(3, 36, 70);
+            color: whitesmoke;
+            border-radius: 15px;
+        }
+
+        /* #edu2:hover {
+            background-color: aliceblue;
+            color: rgb(3, 36, 70);
+
+        }*/
+
+        #edu3 {
+            background-color: rgb(3, 36, 70);
+            color: whitesmoke;
+            border-radius: 15px;
+        }
+
+        /*#edu3:hover {
+            background-color: #fffdf6;
+            color: black;
+
+        }*/
+
+        #edu4 {
+            background-color: rgb(3, 36, 70);
+            color: whitesmoke;
+            border-radius: 15px;
+        }
+
+        /*#edu4:hover {
+            background-color: #fffdf6;
+            color: black;
+
+        }*/
+
+        #tech1:hover {
+            transform: scale(110%);
+            /* zoom:20%;*/
+            transition: 0.35s ease-in-out;
+            border: #A890FE;
+        }
+
+        #tech1 {
+            background-color: aliceblue;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #resume_img {
+            display: none;
+        }
+
+        #resume:focus {
+            background-color: mintcream;
+            transition: all 0.5s ease in;
+
+        }
+
+        .image-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transition: 0.55s ease-in;
+            transform: translate(-50%, -50%);
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 10px 20px 40px rgb(0, 0, 0);
+            z-index: 0.5;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            background: -moz-radial-gradient(left, #ffffff 24%, #cba334 88%);
+            transition-delay: 2sec;
+
+
+        }
+
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Styling for the image */
+        .image-container img {
+            max-width: 100%;
+            height: 100%;
+            transition: 0.55s ease-in;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+
+            nav {
+                display: none;
+            }
+
+            #logoname {
+                display: none;
+            }
+
+            #card2 {
+                margin-top: 40px;
+            }
+
+            #nav-mobile {
+                display: none;
+            }
+
+            #menu {
+                background-image: url("background-image_1.png");
+                background-size: cover;
+                background-position: center;
+                /* Center the image */
+                background-repeat: no-repeat;
+                z-index: -1;
+                padding-bottom: 12px;
+                padding-top: 7px;
+            }
+
+            #img_dk {
+                height: 100px;
+            }
+
+            #name_1 {
+                font-size: 30px;
+            }
+
+            #image-bg {
+                margin-top: 0;
+            }
+
+            #education {
+                /*width:300px;*/
+                height: 200px;
+                margin-bottom: 150px;
+                margin-top: 0%;
+                padding-top: 0%;
+
+            }
+
+            #project_section h1 {
+                font-size: 20;
+
+            }
+
+            #tech {
+                font-size: 20;
+            }
+
+            #techtext{
+                font-size: 20;
+            }
+
+            #card1 {
+                width: 10px;
+            }
+
+            #about p {
+                font-size: 10;
+
+            }
+
+            #about h1 {
+                font-size: 25;
+                margin-bottom: 0%;
+                padding: 0%;
+                font-weight: 300;
+            }
+            #tech1{
+                width:fit-content;
+            }
+            #tech1 img{
+                width: 10px;
+            }
+            #techimg{
+                height: 50px;
+                width: 50px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <!--navbar section-->
+        <nav class="navbar navbar-expand-sm fixed-top bg-snow" style="position: relative; padding: 20px; ">
+            <div class="container" id="nav-mobile">
+                <a href=# class="navbar-brand text-light font-weight-bold" id="logoname"
+                    style="margin-right: 500px ; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+                    DHANARAJ
+                </a>
+                <button class="navbar-toggler mx-3" data-toggle="collapse" data-target="#collapseNav">
+                    <span class="fas fa-bars text-light"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="collapseNav" style="margin-right: 18px;">
+                    <div class="navbar-nav">
+                        <a href="#about" class="nav-item nav-link text-light h6 my-auto">
+                            <b>About</b>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="collapseNav" style="margin-right: 18px;">
+                    <div class="navbar-nav">
+                        <a href="#education" class="nav-item nav-link text-light h6 my-auto">
+                            <b>Education</b>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="collapse navbar-collapse" id="collapseNav" style="margin-right: 18px;">
+                    <div class="navbar-nav">
+                        <a href="#project_section" class="nav-item nav-link  h6 my-auto text-light">
+                            <b>Projects</b>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="collapseNav" style="margin-right: 13px;">
+                    <div class="navbar-nav">
+                        <a href="#tech" class="nav-item nav-link text-light h6 my-auto">
+                            <b>Skills</b>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <button class="btn button1 " id="contact-btn">
+                    <a href="#contact_me" style="color: black;">Contact me</a>
+                </button>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#collapseNav">
+                    <span class="fas fa-bars text-light"></span>
+                </button>
+
+
+            </div>
+
+        </nav>
+
+        <!--image-->
+        <div class="container" id="image-bg" style="padding-top: 45px; padding-bottom: 47px;">
+            <div class="row text-center align-items-center my-5 py-5">
+                <div class="col-12 col-md-6">
+                    <img class="img-fluid rounded-circle " id="img_dk" style="height: 400px" src="Profile.png"
+                        alt="Dhanaraj"></img>
+                </div>
+
+
+                <div class="col-12 col-md-6 py-7 text-light">
+                    <div class="font-weight-light" id="name_1" style="font-size: 50px;">
+                        <b> HI, I am <span style="color: #A890FE;">Dhanaraj Kodli</span></b>
+                    </div>
+                    <h4 class="text font-weight-light" id="name_2"><b>Computer Science Graduate</b></h4>
+                    <img id="resume_img" alt="Resume" src="Screenshot 2024-06-11 001515.png">
+                    <b> <button class="btn" id="resume" onclick="show()">
+                            Resume</b>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--About me-->
+    <div class=" my-4" id="about" style="background-color:rgb(255, 255, 255)">
+        <div class="container text-center dark py-4 w-75 ">
+
+            <h1 class="d-block pt-3 font-weight-light"><span style="color: #A890FE;">About</span> me</h1>
+
+            <div class="lead font-weight-light py-4">
+
+            </div>
+
+            <div class="row py-3">
+                <div class="col-12 col-md-6 ">
+                    <h5> What I can do?</h5>
+                    <p class="text-justify" style="padding:20px;">I am a skilled full-stack web developer, proficient in
+                        both front-end and back-end technologies. Additionally, I possess extensive knowledge in C/C++,
+                        object-oriented programming, and data structures and algorithms. Furthermore, I have strong
+                        communication, team management, and problem-solving skills, making me a well-rounded and
+                        effective contributor in collaborative and dynamic environments.</p>
+                </div>
+                <div class="col-12 col-md-6 ">
+                    <h5> What am I doing currently?</h5>
+                    <p class="text-justify px-6" style="padding: 20px;">I recently graduated with a degree in Computer
+                        Science Engineering from KLE Technological University, where I have gained a solid foundation in
+                        various aspects of computer science. Alongside my academic pursuits, I have completed an
+                        internship at Pravinya Information Technology in Hubli, where I have gained practical experience
+                        and honed my skills in a professional setting.</p>
+                </div>
+            </div>
+            <div class="row mx-6 py-2">
+                <div class="col-12 col-md-12">
+                    <h5> What do I believe in?</h5>
+                    <p class="text-justify px-6" style="padding: 20px;">I believe in the power of continuous learning
+                        and innovation. Having recently graduated with a degree in Computer Science, I completed an
+                        internship at Pravinya Information Technology, I have witnessed how embracing new technologies
+                        and
+                        methodologies can lead to significant advancements. During my academic career, I undertook
+                        numerous projects that required me to stay curious and open to new ideas, which not only
+                        enhanced my skills but also resulted in successful outcomes. I also firmly believe in the
+                        importance of integrity and teamwork. Collaborating with peers on complex projects has taught me
+                        that maintaining honesty and transparency fosters trust and leads
+                        to more effective and meaningful results. These core beliefs drive my passion for technology and
+                        my commitment to contributing positively to any team or organization I join. As I search for new
+                        opportunities, I am eager to bring my dedication to learning, innovation, and collaboration to a
+                        dynamic and forward-thinking environment.</p>
+                </div>
+                <!--<div class="col-12 col-md-6">
+                <h5> How can I help you?</h5>
+                <p class="text-justify px-6" style="padding: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Ipsa, reprehenderit? Earum totam accusamus
+                    eos dolore obcaecati! Illo, repellendus tempora.
+                    Culpa quo optio incidunt eligendi explicabo soluta distinctio totam molestias sunt!</p>
+            </div>-->
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!--Education section-->
+    <div class="container-fluid pt-3 pb-5" id="education">
+        <div class="example">
+            <div class=" row text-center py-5 d-flex flex-nowrap " style="overflow: auto;">
+                <div class="col-12 col-md-4">
+                    <div class="card shadow h100 shadow-lg py-5" id="edu1">
+                        <div class="card-body">
+                            <h2 class="card-text" id="educard">
+                                Education
+                            </h2>
+                            <div>
+                                <img src="arrow-35172_1280.png" height="40px" width="70px" style="color: aliceblue;">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card shadow h100 py-5" id="edu2">
+                        <div class="card-body">
+                            <h4 class="card-text">
+                                <u>Bachelors in Engineering</u>
+                            </h4>
+                            <p class="card-text  mb-0">
+                                <b>Computer Science Engineering</b>
+                            </p>
+                            <p class="card-text ">
+                                KLE Technological University (2020-2024)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-4">
+                    <div class="card shadow h100 py-5" id="edu3">
+                        <div class="card-body">
+                            <h4 class="card-text">
+                                <u>Pre-University</u>
+                            </h4>
+                            <p class="card-text  mb-0">
+                                <b>Science(PCMB)</b>
+                            </p>
+                            <p class="card-text ">
+                                Alva's PU College (2018-2020)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-12 col-md-4">
+                    <div class="card shadow h100 py-5" id="edu4">
+                        <div class="card-body">
+                            <h4 class="card-text">
+                                <u>Schooling</u>
+                            </h4>
+                            <p class="card-text  mb-0">
+                                <b> High School</b>
+                            </p>
+                            <p class="card-text ">
+                                Jawahar Navodaya Vidyalaya (2012-2018)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--project section-->
+    <div class="container text-center font-weight-light py-3 pt-3" id="project_section">
+        <h1 style="color: rgb(1, 1, 1);"> My <span style="color: #A890FE;">Projects</span>
+        </h1>
+        <div class="lead font-weight-light text-dark">
+            I build projects. Just like these..
+        </div>
+        <div class="row my-5 pt-3 position-relative">
+            <div class="col-12 col-md-4 my-2 " id="card1">
+                <div class="card shadow h-100" style="cursor: pointer; height: auto;">
+                    <img class="card-image-top w-100% h-100%" src="Screenshot 2024-06-09 191315.png"
+                        alt="image 2"></img>
+                    <div class="card-body">
+                        <h4 class="card-title">YelpCamp</h4>
+                        <p class="card-text" id="project_detailes">This project is built for solving the issue of
+                            finding campgrounds while
+                            trecking. This project is a campground
+                            finding web application designed to
+                            help users discover campgrounds near them,
+                            anywhere in the world, using an interactive map</p>
+                        <p>Technologies Used:<b> HTML, CSS, JavaScript, Express.js, MongoDB</b></p>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 my-2" id="card2">
+                <div class="card shadow h-100" style="cursor: pointer;">
+                    <img src="download.jpg" alt="image 1" class="card-image-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Hospital Management Syatem</h4>
+                        <p class="card-text" id="project_detailes"> This project is built to help doctor to save records
+                            and update the
+                            patients history and to write prescription.</p>
+                        <p>Technologies Used:<b> HTML, CSS, JavaScript, Node.js, My SQL</b></p>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 my-2" id="card3">
+                <div class="card shadow h-100" style="cursor: pointer;">
+                    <img src="img1_main.png" class="card-image-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Web Application for Company</h4>
+                        <p class="card-text" id="project_detailes">This project was built for the company purpose during
+                            our industry project
+                            time in college. It is a static home page for the company </p>
+                        <p>Technologies Used:<b> HTML, CSS, JavaScript</b></p>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- technology stack -->
+
+
+    <div class="py-8 " id="tech"
+        style="z-index: -1;background-color:rgb(3, 36, 70); padding-bottom: 80px; margin-bottom: -8px;">
+        <div class="text-center">
+            <h1 class="text-light" style="padding-top: 45px;"><span style="color: #A890FE;">Technology</span> stack
+            </h1>
+            <div class="lead font-weight-light text-light pb-5" id="techtext">
+                Some of technologies through which I design,develop and deliver
+            </div>
+        </div>
+        <div class="container text-center font-weight-light py-3 bg-snow " id="tech1">
+
+
+
+            <div class=" d-flex justify-content-around py-4">
+                <div style="height:100px;width:100px;" >
+                    <img src="C++-removebg-preview.png" alt="css logo" id="techimg" style="height: 100px;width: 150px;">
+
+                </div>
+
+
+                <div style="height:100px;width:100px;">
+                    <img src="html-removebg-preview.png" alt="html logo" id="techimg" style="height: 100px;width: 100px;">
+                    </img>
+
+                </div>
+
+
+                <div style="height:100px;width:100px;">
+                    <img src="css-removebg-preview.png" alt="css logo" id="techimg" style="height: 100px;width: 100px;">
+
+                </div>
+                <div style="height:100px;width:100px;">
+                    <img src="javascript-removebg-preview.png" id="techimg" class="rounded-circle" alt="javascript logo"
+                        style="height: 100px;width: 100px;">
+
+                </div>
+            </div>
+            <div class="d-flex justify-content-around py-4 pb-4">
+                <div style="height:100px;width:100px;">
+                    <img src="bootstrap-removebg-preview.png" id="techimg" alt="bootstrap logo" style="height:100px;width: 100px;">
+
+                </div>
+
+
+                <div style="height:100px;width:100px;">
+                    <img src="react-removebg-preview.png" id="techimg" alt="react logo" style="height: 100px;width: 100px;">
+
+                </div>
+                <div style="height:100px;width:100px;">
+                    <img src="expressjs-removebg-preview.png" id="techimg" alt="css logo" style="height: 100px;width: 150px;">
+
+                </div>
+                <div style="height:100px;width:100px;">
+                    <img src="nodejs-removebg-preview.png" id="techimg" alt="nodejs logo" style="height: 100px;width: 100px;">
+
+                </div>
+                <div style="height:100px;width:100px;">
+                    <img src="mongodb-removebg-preview.png" id="techimg" alt="css logo" style="height: 100px;width: 100px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--footer-->
+
+
+    <footer id="contact_me">
+        <div class="container-fluid text-center w-100 " style="background-color: black;padding-bottom: 20px;">
+            <h2 class="text-light"></h2>
+            <div class="row py-4">
+                <div class="col-md-12 pt-2 text-center">
+                    <h5><span class="text" style="color: #A890FE;">Contact me</span></h5>
+
+
+                    <a href=# class="text-light" style="text-decoration:none;">Mobile:9916384104 <br>
+                        <a href=dhanarajkodli@gmail.com class="text-light" style="text-decoration:none;">email: <u>
+                                dhanarajkodli@gmail.com </u>
+
+
+
+                </div>
+                <!-- <div class="col-12 col-md-4 text-justify pt-4  text-light " style="text-align:justify">
+                <p>
+                    
+                </p>
+            </div>
+            <div class="col-12 col-md-4 pt-3">
+                <h5 class="text-info pb-3">Social</h5>
+                <a href=# style="text-decoration: none"><i class="fab fa-linkedin text-light h1 d-block"></i></a>
+                <a href=# style="text-decoration: none"><i class="fab fa-github-square text-light h1 d-block"></i></a>
+                <a href=# style="text-decoration: none"><i class="fas fa-envelope text-light h1 d-block"></i></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-muted mb-3">
+                <h6>copyright @ Dhanaraj 2021</h6>
+            </div>
+        </div>-->
+            </div>
+    </footer>
+
+    <script>
+        function show() {
+            var imageContainer =
+                document.createElement("div");
+            imageContainer.className =
+                "image-container";
+
+            var image =
+                document.createElement("img");
+            image.src =
+                "resumedk.png";
+
+            var closeButton =
+                document.createElement(
+                    "button"
+                );
+            closeButton.textContent = "Close";
+            closeButton.className =
+                "close-btn";
+            closeButton.onclick =
+                function () {
+                    document.body.removeChild(
+                        imageContainer
+                    );
+                };
+
+            imageContainer.appendChild(
+                closeButton
+            );
+            imageContainer.appendChild(image);
+
+            document.body.appendChild(
+                imageContainer
+            );
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
